@@ -78,7 +78,7 @@ const SelectState = () =>{
           usImg.data.map((s)=>{
             return(
               <div className="parkByState">
-                <img src={s.images[0].url} alt=""/>
+                <img id="imgPark" src={s.images[0].url} alt=""/>
                 <div id="text">
                   
                     <Link key={s.id} to={"./"+s.id}>

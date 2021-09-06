@@ -38,10 +38,10 @@ const SelectActivity = () =>{
               usPark.data.map((s)=>{
                 return(
                   <div className="parkByState">
-                  <img src={s.images[0].url} alt=""/>
+                  <img id="imgPark" src={s.images[0].url} alt=""/>
                   <div id="text">
                     <h2>
-                      <Link id="namePark" to='/:id'>{s.fullName+" - "+s.states}</Link></h2>
+                      <Link key={s.id} to={"./"+s.id}>{s.fullName+" - "+s.states}</Link></h2>
                     <p>{s.description}</p>
                   </div>
                 </div>
