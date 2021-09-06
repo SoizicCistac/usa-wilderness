@@ -16,9 +16,12 @@ function ParkInfo(props){
             <Menu/>
             {
                 parkInfo != null &&
-                <div>
-                    <h2>Test</h2>
-                </div>
+                    parkInfo.data.map((park)=>{
+                        return(<div>
+                            <h2>{park.fullName}</h2>
+                            <img src={park.images[0].url}/>
+                        </div>)
+                    })
             }
         </div>
     )

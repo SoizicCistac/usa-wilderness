@@ -41,7 +41,8 @@ const SelectActivity = () =>{
                   <img src={s.images[0].url} alt=""/>
                   <div id="text">
                     <h2>
-                      <Link id="namePark" to='/:id'>{s.fullName+" - "+s.states}</Link></h2>
+                      <Link key={s.id} to={"./"+s.id}>{s.fullName}</Link>
+                    </h2>
                     <p>{s.description}</p>
                   </div>
                 </div>
