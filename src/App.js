@@ -1,12 +1,20 @@
+import React from 'react';
+import { Switch, Route } from 'react-router-dom';
 import './App.css';
-/*import SelectState from './components/SelectState';*/
-import SelectActivity from './components/SelectActivity';
+
+import Home from './pages/Home';
+import Park from './pages/Park';
+import ParkInfo from './pages/ParkInfo';
+import Activity from './pages/Activity';
 
 function App() {
   return (
-    <div>
-      <SelectActivity/>
-    </div>
+    <Switch>
+      <Route exact path='/' component={Home}/>
+      <Route path='/park' component={Park}/>
+      <Route path='/activity' component={Activity}/>
+      <Route path='/:id' component={ParkInfo}/>
+    </Switch>
   );
 }
 

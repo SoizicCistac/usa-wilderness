@@ -1,42 +1,105 @@
+@import url('https://fonts.googleapis.com/css2?family=Architects+Daughter&family=Courgette&family=Indie+Flower&family=Merienda&family=Neucha&family=Satisfy&display=swap');
+
+:root{
+  --first-font: 'Architects Daughter', cursive;
+  --second-font: 'Courgette', cursive;
+  --third-font: 'Indie Flower', cursive;
+  --fourth-font: 'Merienda', cursive;
+  --fifth-font: 'Neucha', cursive;
+  --seventh-font: 'Satisfy', cursive;
+  --green: #213b1b;
+  --light-green: #56903a;
+  --brown: #6f4930;
+  --light-brown: #c56c39;
+}
+
 .App {
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-
 img{
   width:500px;
+  height: auto;
+}
+
+#logo{
+  width: 40px;
+  padding: 10px;
+}
+
+#stateUS{
+  padding: 30px;
+}
+
+#activity{
+  padding: 30px;
+}
+
+.parkByState{
+  display: flex;
+  margin : 80px;
+}
+
+.parkByState #text{
+  margin-left: 10px;
+}
+
+.navBar{
+  background-color: var(--light-green);
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding-right: 30px;
+}
+
+h1{
+  font-family: var(--seventh-font);
+  text-align: center;
+  font-size: 60px;
+  margin-bottom: 50px;
+}
+
+#linkHome{
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+  font-size: 20px;
+  font-family: var(--fourth-font);
+}
+
+#buttonState{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: auto;
+  width: 200px;
+  padding: 40px;
+  border: none;
+  background-color: var(--green);
+  color: white;
+  font-weight: bold;
+  font-size: 16px;
+}
+
+#buttonActivity{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: auto;
+  width: 200px;
+  padding: 40px;
+  border: none;
+  background-color: var(--green);
+  color: white;
+  font-weight: bold;
+  font-size: 16px;
+}
+
+#namePark{
+  text-decoration: none;
+}
+
+.footer{
+  background-color: var(--brown);
 }

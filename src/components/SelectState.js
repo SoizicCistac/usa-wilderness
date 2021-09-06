@@ -1,21 +1,23 @@
 import React from "react";
 import { useState } from "react";
 
+import {Link} from 'react-router-dom';
+
 
 const SelectState = () =>{
     const[usImg, setUsImg]=useState(null);
 
     const findState = (event)=>{
       let selection = event.target.value;
-      fetch ("https://developer.nps.gov/api/v1/tours?api_key=mSgdFqPdq58NJqAkeZ75JDURja7DGnBPBW1qo9vI&stateCode="+selection)
+      fetch ("https://developer.nps.gov/api/v1/parks?api_key=HtGeKfGroTqfT3YbR94d31DmbprYmSpMqBmo6jer&stateCode="+selection)
         .then((resp)=>resp.json())
         .then((data)=>setUsImg(data))
     }
     
     return(
-    <div >
+    <div id="stateUS">
     <select onChange={findState}>
-      <option value="">Choisissez un État</option>
+      <option value="">Choose a State</option>
       <option value="AL">Alabama</option>
       <option value="AK">Alaska</option>
       <option value="AZ">Arizona</option>
@@ -75,10 +77,16 @@ const SelectState = () =>{
           
           usImg.data.map((s)=>{
             return(
-              <div>
+              <div className="parkByState">
                 <img src={s.images[0].url} alt=""/>
-                <h1>{s.title}</h1>
-                <p>{s.description}</p>
+                <div id="text">
+                  
+                    <Link key={s.id} to={"./"+s.id}>
+                      <h2>{s.fullName}</h2>
+                    </Link>
+                  
+                  <p>{s.description}</p>
+                </div>
               </div>
             )
           })
