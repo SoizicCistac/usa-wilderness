@@ -103,3 +103,12 @@ h1{
 .footer{
   background-color: var(--brown);
 }
+
+.containerPark{
+  margin: 100px;
+}
+
+h2{
+  text-align: center;
+  padding-bottom: 40px;
+}

@@ -1,6 +1,7 @@
 import React, {useEffect, useState} from 'react';
 import Menu from '../components/Menu'
 import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet'
+import '../App.css';
 
 function ParkInfo(props){
 
@@ -19,9 +20,11 @@ function ParkInfo(props){
                 parkInfo != null &&
                     parkInfo.data.map((park)=>{
                         return(
-                            <div>
+                            <div className="containerPark">
                                 <h2>{park.fullName}</h2>
-                                <img id="imgPark" src={park.images[0].url} alt={park.images[0].altText}/>
+                                <img id="imgParkInfo" src={park.images[0].url} alt={park.images[0].altText}/>
+                                <h3>How to go there?</h3>
+                                <p>{park.directionsInfo}</p>
                                 <MapContainer center={[parseFloat(park.latitude), parseFloat(park.longitude)]} zoom={13} scrollWheelZoom={false}>
                                     <TileLayer
                                         attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
