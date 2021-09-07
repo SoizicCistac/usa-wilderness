@@ -1,6 +1,8 @@
 import React, {useEffect, useState} from 'react';
-import Menu from '../components/Menu'
-import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet'
+import Menu from '../components/Menu';
+import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet';
+import '../App.css';
+import 'leaflet/dist/leaflet.css';
 
 function ParkInfo(props){
 
@@ -19,24 +21,27 @@ function ParkInfo(props){
                 parkInfo != null &&
                     parkInfo.data.map((park)=>{
                         return(
-                            <div>
-                                <h2>{park.fullName}</h2>
-                                <img id="imgPark" src={park.images[0].url} alt={park.images[0].altText}/>
-                                <MapContainer center={[parseFloat(park.latitude), parseFloat(park.longitude)]} zoom={13} scrollWheelZoom={false}>
+                            <div className="infoDiv">
+                                  <h2>{park.fullName}</h2>
+                                  <img id="imgPark" src={park.images[0].url} alt={park.images[0].altText}/>
+                                  <p>{park.directionsInfo}</p>
+                               <div>
+                                  <MapContainer center={[parseFloat(park.latitude), parseFloat(park.longitude)]} zoom={13} scrollWheelZoom={false}>
                                     <TileLayer
-                                        attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
-                                        url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+                                         attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
+                                         url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
                                     />
                                     <Marker position={[parseFloat(park.latitude), parseFloat(park.longitude)]}>
-                                        <Popup>
-                                        A pretty CSS3 popup. <br /> Easily customizable.
-                                        </Popup>
+                                      <Popup>
+                                          A pretty CSS3 popup. <br /> Easily customizable.
+                                      </Popup>
                                     </Marker>
-                                </MapContainer>
+                                  </MapContainer>
+                               </div>
                             </div>
-                        )
+                                                
+                        );
                     })
-                
             }
         </div>
     )
