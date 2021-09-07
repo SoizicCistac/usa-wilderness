@@ -2,6 +2,7 @@ import React, {useEffect, useState} from 'react';
 import Menu from '../components/Menu'
 import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet'
 import '../App.css';
+import 'leaflet/dist/leaflet.css';
 
 function ParkInfo(props){
 

@@ -104,11 +104,19 @@ h1{
   background-color: var(--brown);
 }
 
-.containerPark{
-  margin: 100px;
+.infoDiv{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 h2{
   text-align: center;
   padding-bottom: 40px;
+}
+
+.leaflet-container{
+  width: 250px;
+  height: 250px;
 }
