@@ -6,13 +6,16 @@ import Footer from '../components/Footer';
 
 function Activity () {
     return(
+        <>
         <div className="main">
             <Menu/>
             <h2>Select Park by Activity</h2>
             <SelectActivity/>
             
-            <Footer/>
         </div>
+        
+        <Footer/>
+        </>
     )
 }
 
