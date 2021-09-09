@@ -1,5 +1,6 @@
 import React, {useEffect, useState} from 'react';
-import Menu from '../components/Menu'
+import Menu from '../components/Menu';
+import Footer from '../components/Footer';
 import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet'
 
 function ParkInfo(props){
@@ -38,6 +39,7 @@ function ParkInfo(props){
                     })
                 
             }
+            <Footer/>
         </div>
     )
 }
