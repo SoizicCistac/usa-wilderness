@@ -120,10 +120,11 @@ h1{
   flex-direction:row;
   height:72px;
   justify-content:space-around;
-  position:fixed;
+  position: fixed;
   bottom: 0;
   left: 0;
   width:100%;
+  z-index: 1;
 }
 
 .textFooter{
@@ -169,6 +170,8 @@ h1{
 
 .infoDiv{
   display: flex;
+  width: 60%;
+  margin: auto;
   flex-direction: column;
   justify-content: center;
   align-items: center;
@@ -176,10 +179,37 @@ h1{
 
 h2{
   text-align: center;
+  padding-top: 120px;
   padding-bottom: 40px;
 }
 
 .leaflet-container{
-  width: 250px;
-  height: 250px;
+  width: 400px;
+  height: 300px;
+  margin-bottom: 30px;
+  z-index: 0;
+}
+
+h3{
+  margin-top: 30px;
+}
+
+.infoDiv > p{
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.mapAndDirection{
+  display: flex;
+  flex-direction: row;
+  margin-top: 50px;
+  justify-content: space-around;
+  margin-bottom: 120px;
+}
+
+.textDirection{
+  display: flex;
+  flex-direction: column;
+  margin-left: 20px;
+  width: 70%;
 }

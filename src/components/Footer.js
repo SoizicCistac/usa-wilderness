@@ -10,16 +10,16 @@ import horseRiding from "./img/horseRiding.png";
 const Footer = () => {
     return(
         <footer className="footer">
-            <img id="imgFooter1" src={camping}/>
-            <img id="imgFooter2" src={hiking}/>
-            <img id="imgFooter3" src={lac}/>
+            <img id="imgFooter1" src={camping} alt="camping logo"/>
+            <img id="imgFooter2" src={hiking} alt="hiking logo"/>
+            <img id="imgFooter3" src={lac} alt="lac logo"/>
             <p className="textFooter">
                 Réalisé par Etienne Pouvreau, Marie-Laure Debeaune et Soizic Cistac
                  -  promotion part-time juin 2021 
             </p>
-            <img id="imgFooter4" src={widlife}/>
-            <img id="imgFooter5" src={horseRiding}/>
-            <img id="imgFooter6" src={montagne}/>
+            <img id="imgFooter4" src={widlife} alt="wildlife logo"/>
+            <img id="imgFooter5" src={horseRiding} alt="horse logo"/>
+            <img id="imgFooter6" src={montagne} alt="mountain logo"/>
         </footer> 
     )
 }

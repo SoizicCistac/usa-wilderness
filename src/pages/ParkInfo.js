@@ -25,19 +25,23 @@ function ParkInfo(props){
                             <div className="infoDiv">
                                   <h2>{park.fullName}</h2>
                                   <img id="imgPark" src={park.images[0].url} alt={park.images[0].altText}/>
-                                  <p>{park.directionsInfo}</p>
-                                  
-                                  <MapContainer className="card" center={[parseFloat(park.latitude), parseFloat(park.longitude)]} zoom={13} scrollWheelZoom={false}>
-                                    <TileLayer
-                                         attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
-                                         url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-                                    />
-                                    <Marker position={[parseFloat(park.latitude), parseFloat(park.longitude)]}>
-                                      <Popup>
-                                          {park.fullName}
-                                      </Popup>
-                                    </Marker>
-                                  </MapContainer>
+                                  <div className="mapAndDirection">
+                                    <MapContainer className="card" center={[parseFloat(park.latitude), parseFloat(park.longitude)]} zoom={13} scrollWheelZoom={false}>
+                                        <TileLayer
+                                            attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
+                                            url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+                                        />
+                                        <Marker position={[parseFloat(park.latitude), parseFloat(park.longitude)]}>
+                                        <Popup>
+                                            {park.fullName}
+                                        </Popup>
+                                        </Marker>
+                                    </MapContainer>
+                                    <div className="textDirection">
+                                        <h3>How to go there?</h3>
+                                        <p>{park.directionsInfo}</p>
+                                    </div>  
+                                  </div>
                             </div>
                                                 
                         );
