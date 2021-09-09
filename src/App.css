@@ -19,7 +19,7 @@
 
 #imgPark{
   width:500px;
-  height: 200px;
+  height: auto;
 }
 
 #logo{
@@ -111,4 +111,17 @@ h1{
 h2{
   text-align: center;
   padding-bottom: 40px;
+}
+
+.card{
+  width: 500px;
+  height: 500px;
+}
+
+.infoDiv{
+  display: flex;
+  flex-direction: column;
+  width: 80%;
+  margin:auto;
+  align-items: center;
 }
