@@ -1,6 +1,8 @@
 import React from 'react';
-import Menu from '../components/Menu'
+import Menu from '../components/Menu';
+import Footer from '../components/Footer';
 import {Link} from 'react-router-dom';
+
 
 
 function Home () {
@@ -20,7 +22,7 @@ function Home () {
                 </Link>
             </div>
             
-
+            <Footer/>
 
         </div>
     )
