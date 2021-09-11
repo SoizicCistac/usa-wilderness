@@ -3,8 +3,6 @@ import { useState } from "react";
 import Modal from "react-modal";
 import { Link } from "react-router-dom";
 
-import ParkInfo from "../pages/ParkInfo";
-
 
 const SelectActivity = () =>{
 
@@ -65,7 +63,7 @@ const SelectActivity = () =>{
                 return(
                   <div className="parkByState">
                   <img id="imgPark" src={s.images[0].url} alt=""/>
-                  <div id="text">
+                  <div className="textPark">
                     <h2>{s.fullName+" - "+s.states}</h2>
                     <p>{s.description}</p>
                     <button onClick={()=>openModal(s.id)}>More information</button>
