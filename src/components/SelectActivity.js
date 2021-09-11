@@ -10,6 +10,7 @@ const SelectActivity = () =>{
 
     const [modalIsOpen, setIsOpen] = React.useState(false);
     
+
     const customStyles = {
       content: {
         top: '50%',
@@ -70,7 +71,9 @@ const SelectActivity = () =>{
                       style={customStyles}
                       contentLabel="Example Modal"
                     >
-                      <Link key={s.id} to={"./"+s.id}></Link>
+                      <Link key={s.id} to={"./"+s.id}>
+                       
+                      </Link>
                       <button onClick={closeModal}>close</button>
                     </Modal>
                   </div>
