@@ -1,7 +1,7 @@
 import React from "react";
 import { useState } from "react";
 import Modal from "react-modal";
-import { Link } from "react-router-dom";
+import ParkInfo from "../pages/ParkInfo";
 
 
 const SelectActivity = () =>{
@@ -14,22 +14,22 @@ const SelectActivity = () =>{
 
     const customStyles = {
       content: {
-        top: '50%',
-        left: '50%',
-        right: 'auto',
-        bottom: 'auto',
-        marginRight: '-50%',
-        transform: 'translate(-50%, -50%)',
+        position: 'fixed',
+        top: 0,
+        left: 0,
+        right: 0,
+        bottom: 0,
       },
     };
 
+    Modal.setAppElement('#root');
+
     const findActivity = (event)=>{
       let selection = event.target.value;
-      fetch ("https://developer.nps.gov/api/v1/parks?api_key=HtGeKfGroTqfT3YbR94d31DmbprYmSpMqBmo6jer&q="
-      +selection)
+      fetch ("https://developer.nps.gov/api/v1/parks?api_key=rZhcCrv2n16zgelgmIc2adI61HkaEArFIMeHhH6E&q="+selection)
         .then((resp)=>resp.json())
-        .then((data)=>setUsPark(data))
-    }
+        .then((data)=>setUsPark(data));
+    };
 
     function openModal(id) {
       setIsOpen(true);
@@ -58,7 +58,6 @@ const SelectActivity = () =>{
           usPark != null &&
           <div>
             {
-              
               usPark.data.map((s)=>{
                 return(
                   <div className="parkByState">
@@ -73,8 +72,8 @@ const SelectActivity = () =>{
                       style={customStyles}
                       contentLabel="Example Modal"
                     >
-                      <ParkInfo id={parkSelect}/>
-                      <button onClick={closeModal}>close</button>
+                      <ParkInfo/>
+                      <button id='modalBtn' onClick={closeModal}>close</button>
                     </Modal>
                   </div>
                 </div>

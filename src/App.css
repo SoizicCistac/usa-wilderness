@@ -240,6 +240,12 @@ h3{
   overflow:hidden;
 }
 
+#modalBtn{
+  width: 65%;
+  margin-bottom: 100px;
+  margin-left: 25%;
+}
+
 /*responsive*/
 
 @media screen and (max-width: 425px) {
