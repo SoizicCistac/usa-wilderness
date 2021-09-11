@@ -13,10 +13,10 @@ const Footer = () => {
             <img id="imgFooter1" src={camping} alt="camping logo"/>
             <img id="imgFooter2" src={hiking} alt="hiking logo"/>
             <img id="imgFooter3" src={lac} alt="lac logo"/>
-            <p className="textFooter">
-                Created by Etienne Pouvreau, Marie-Laure Debeaune and Soizic Cistac
-                promotion part-time june 2021 WCS
-            </p>
+            <div className="textFooter">
+                <p>Created by Etienne Pouvreau, Marie-Laure Debeaune and Soizic Cistac</p>
+                <p>promotion part-time june 2021 WCS</p>
+            </div>
             <img id="imgFooter4" src={widlife} alt="wildlife logo"/>
             <img id="imgFooter5" src={horseRiding} alt="horse logo"/>
             <img id="imgFooter6" src={montagne} alt="mountain logo"/>

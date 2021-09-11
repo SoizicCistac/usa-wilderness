@@ -1,12 +1,27 @@
 import React from "react";
 import { useState } from "react";
+import Modal from "react-modal";
 import { Link } from "react-router-dom";
+
+import ParkInfo from "../pages/ParkInfo";
 
 
 const SelectActivity = () =>{
 
     const[usPark, setUsPark] = useState(null);
 
+    const [modalIsOpen, setIsOpen] = React.useState(false);
+    
+    const customStyles = {
+      content: {
+        top: '50%',
+        left: '50%',
+        right: 'auto',
+        bottom: 'auto',
+        marginRight: '-50%',
+        transform: 'translate(-50%, -50%)',
+      },
+    };
 
     const findActivity = (event)=>{
       let selection = event.target.value;
@@ -14,6 +29,14 @@ const SelectActivity = () =>{
       +selection)
         .then((resp)=>resp.json())
         .then((data)=>setUsPark(data))
+    }
+
+    function openModal() {
+      setIsOpen(true);
+    }
+
+    function closeModal() {
+      setIsOpen(false);
     }
 
     return(
@@ -40,9 +63,18 @@ const SelectActivity = () =>{
                   <div className="parkByState">
                   <img id="imgPark" src={s.images[0].url} alt=""/>
                   <div id="text">
-                    <h2>
-                      <Link key={s.id} to={"./"+s.id}>{s.fullName+" - "+s.states}</Link></h2>
+                    <h2>{s.fullName+" - "+s.states}</h2>
                     <p>{s.description}</p>
+                    <button onClick={openModal}>More information</button>
+                    <Modal
+                      isOpen={modalIsOpen}
+                      onRequestClose={closeModal}
+                      style={customStyles}
+                      contentLabel="Example Modal"
+                    >
+                      <Link key={s.id} to={"./"+s.id}></Link>
+                      <button onClick={closeModal}>close</button>
+                    </Modal>
                   </div>
                 </div>
                 )

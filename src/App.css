@@ -126,6 +126,7 @@ h1{
   left: 0;
   width:100%;
   z-index: 1;
+  text-align: center;
 }
 
 .textFooter{
@@ -232,4 +233,16 @@ h3{
   display: flex;
   margin: auto;
   overflow:hidden;
+}
+
+@media screen and (max-width:425px) {
+  #imgFooter2, #imgFooter3, #imgFooter4, #imgFooter5{
+    display:none
+  }
+}
+
+@media screen and (max-width:768px){
+  #imgFooter3, #imgFooter4{
+    display:none
+  }
 }
