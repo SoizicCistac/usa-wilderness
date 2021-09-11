@@ -110,6 +110,10 @@ h1{
   text-decoration: none;
 }
 
+.h2SelectActivity{
+  padding-top:0;
+}
+
 .main{
   position:relative;
   min-height:100%;
