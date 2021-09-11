@@ -4,9 +4,13 @@ import Footer from '../components/Footer';
 import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet'
 import '../App.css';
 import 'leaflet/dist/leaflet.css';
+import Slider from 'react-slick';
+import 'slick-carousel/slick/slick.css';
+import 'slick-carousel/slick/slick-theme.css';
 
 function ParkInfo(props){
 
+    const [imageSlider, setImageSlider] = useState([]);
     const [parkInfo, setParkInfo] = useState(null);
 
     useEffect(()=>{
@@ -14,6 +18,21 @@ function ParkInfo(props){
             .then((resp)=>resp.json())
             .then((data)=> setParkInfo(data))
     }, []);
+
+    useEffect(()=>{
+        fetch('https://developer.nps.gov/api/v1/parks?api_key=1zZ6Jzg2ZXCy0Lr9fwlHdv9GIxcxGv4IWgePmqe2&id='+props.match.params.id)
+          .then((resp)=>resp.json())
+          .then((data)=>setImageSlider(data.data[0].images));
+      }, []);
+
+      const settings = {
+        dots: true,
+        infinite: true,
+        speed: 500,
+        slidesToShow: 1,
+        slidesToScroll: 1
+      };
+    
 
     return(
         <div>
@@ -24,7 +43,19 @@ function ParkInfo(props){
                         return(
                             <div className="infoDiv">
                                   <h2>{park.fullName}</h2>
-                                  <img id="imgPark" src={park.images[0].url} alt={park.images[0].altText}/>
+                                  <div className='divContainer'>
+                                     <Slider className='slider' {...settings}>
+                                            {
+                                                imageSlider != null &&
+                                                imageSlider.map((image)=>{
+                                                    return <div key={image.title}>
+                                                    <img src={image.url} alt={image.altText} className='imageSlider'/>
+                                                    <p>{image.caption}</p>
+                                                    </div>
+                                                })
+                                            }
+                                        </Slider>
+                                 </div>
                                   <div className="mapAndDirection">
                                     <MapContainer className="card" center={[parseFloat(park.latitude), parseFloat(park.longitude)]} zoom={13} scrollWheelZoom={false}>
                                         <TileLayer
