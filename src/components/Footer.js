@@ -14,8 +14,8 @@ const Footer = () => {
             <img id="imgFooter2" src={hiking} alt="hiking logo"/>
             <img id="imgFooter3" src={lac} alt="lac logo"/>
             <p className="textFooter">
-                Réalisé par Etienne Pouvreau, Marie-Laure Debeaune et Soizic Cistac
-                 -  promotion part-time juin 2021 
+                Created by Etienne Pouvreau, Marie-Laure Debeaune and Soizic Cistac
+                 -  promotion part-time june 2021 WCS
             </p>
             <img id="imgFooter4" src={widlife} alt="wildlife logo"/>
             <img id="imgFooter5" src={horseRiding} alt="horse logo"/>
