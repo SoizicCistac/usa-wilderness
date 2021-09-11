@@ -235,8 +235,9 @@ h3{
   overflow:hidden;
 }
 
-<<<<<<< HEAD
+
 /*responsive*/
+
 @media screen and (max-width: 425px) {
   #imgFooter2,#imgFooter3,#imgFooter4,#imgFooter5
   {
@@ -257,6 +258,7 @@ h3{
     width:60%!important;
   }
 }
+
 @media screen and (max-width:768px) {
   #imgFooter3,#imgFooter4{
     display:none;
@@ -279,7 +281,7 @@ h3{
     width:45%;
   }
 }
-=======
+
 @media screen and (max-width:425px) {
   #imgFooter2, #imgFooter3, #imgFooter4, #imgFooter5{
     display:none
@@ -291,4 +293,3 @@ h3{
     display:none
   }
 }
->>>>>>> 0714d2148f08632d1653dd5ad3df127ee015fa50
