@@ -12,6 +12,7 @@ const SelectActivity = () =>{
 
     const [modalIsOpen, setIsOpen] = React.useState(false);
     
+    const [parkSelect, setParkSelect] = useState(null);
 
     const customStyles = {
       content: {
@@ -32,8 +33,9 @@ const SelectActivity = () =>{
         .then((data)=>setUsPark(data))
     }
 
-    function openModal() {
+    function openModal(id) {
       setIsOpen(true);
+      setParkSelect(id);
     }
 
     function closeModal() {
@@ -66,16 +68,14 @@ const SelectActivity = () =>{
                   <div id="text">
                     <h2>{s.fullName+" - "+s.states}</h2>
                     <p>{s.description}</p>
-                    <button onClick={openModal}>More information</button>
+                    <button onClick={()=>openModal(s.id)}>More information</button>
                     <Modal
                       isOpen={modalIsOpen}
                       onRequestClose={closeModal}
                       style={customStyles}
                       contentLabel="Example Modal"
                     >
-                      <Link key={s.id} to={"./"+s.id}>
-                       
-                      </Link>
+                      <ParkInfo id={parkSelect}/>
                       <button onClick={closeModal}>close</button>
                     </Modal>
                   </div>
