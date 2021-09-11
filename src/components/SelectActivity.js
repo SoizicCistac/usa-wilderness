@@ -1,7 +1,7 @@
 import React from "react";
 import { useState } from "react";
 import Modal from "react-modal";
-import { Link } from "react-router-dom";
+import ParkInfo from '../pages/ParkInfo';
 
 
 const SelectActivity = () =>{
@@ -20,7 +20,7 @@ const SelectActivity = () =>{
         bottom: 'auto',
         marginRight: '-50%',
         transform: 'translate(-50%, -50%)',
-        width: '90%',
+        width: '80%',
         height: '90%',
       },
     };
@@ -60,7 +60,6 @@ const SelectActivity = () =>{
           usPark != null &&
           <div>
             {
-              
               usPark.data.map((s)=>{
                 return(
                   <div className="parkByState">

@@ -1,11 +1,37 @@
 import React from "react";
 import { useState } from "react";
-
-import {Link} from 'react-router-dom';
+import Modal from "react-modal";
+import ParkInfo from '../pages/ParkInfo';
 
 
 const SelectState = () =>{
     const[usImg, setUsImg]=useState(null);
+
+    const [modalIsOpen, setIsOpen] = React.useState(false);
+    
+    const [parkSelect, setParkSelect] = useState(null);
+
+    const customStyles = {
+      content: {
+        top: '50%',
+        left: '50%',
+        right: 'auto',
+        bottom: 'auto',
+        marginRight: '-50%',
+        transform: 'translate(-50%, -50%)',
+        width: '80%',
+        height: '90%',
+      },
+    };
+
+    function openModal(id) {
+      setIsOpen(true);
+      setParkSelect(id);
+    }
+
+    function closeModal() {
+      setIsOpen(false);
+    }
 
     const findState = (event)=>{
       let selection = event.target.value;
@@ -81,9 +107,16 @@ const SelectState = () =>{
                 <img id="imgPark" src={s.images[0].url} alt=""/>
                 <div id="text">
                   
-                    <Link key={s.id} to={"./"+s.id}>
-                      <h2>{s.fullName}</h2>
-                    </Link>
+                <button onClick={()=>openModal(s.id)}>More information</button>
+                    <Modal
+                      isOpen={modalIsOpen}
+                      onRequestClose={closeModal}
+                      style={customStyles}
+                      contentLabel="Example Modal"
+                    >
+                      <ParkInfo id={parkSelect}/>
+                      <button onClick={closeModal}>close</button>
+                    </Modal>
                   
                   <p>{s.description}</p>
                 </div>
