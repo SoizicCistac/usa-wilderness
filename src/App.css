@@ -57,6 +57,7 @@
   width: 100%;
   align-items: center;
   padding-left: 30px;
+  z-index:1;
 }
 
 h1{
