@@ -82,7 +82,7 @@ const SelectState = () =>{
                 <div id="text">
                   
                     <Link key={s.id} to={"./"+s.id}>
-                      <h2>{s.fullName}</h2>
+                      <h2 className="h2SelectActivity">{s.fullName}</h2>
                     </Link>
                   
                   <p>{s.description}</p>

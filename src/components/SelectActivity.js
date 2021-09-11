@@ -63,7 +63,7 @@ const SelectActivity = () =>{
                   <div className="parkByState">
                   <img id="imgPark" src={s.images[0].url} alt=""/>
                   <div id="text">
-                    <h2>{s.fullName+" - "+s.states}</h2>
+                    <h2 className="h2SelectActivity">{s.fullName+" - "+s.states}</h2>
                     <p>{s.description}</p>
                     <button onClick={openModal}>More information</button>
                     <Modal
