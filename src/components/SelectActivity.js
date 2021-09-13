@@ -14,11 +14,14 @@ const SelectActivity = () =>{
 
     const customStyles = {
       content: {
-        position: 'fixed',
-        top: 0,
-        left: 0,
-        right: 0,
-        bottom: 0,
+        top: '50%',
+        left: '50%',
+        right: 'auto',
+        bottom: 'auto',
+        marginRight: '-50%',
+        transform: 'translate(-50%, -50%)',
+        width: '80%',
+        height: '90%',
       },
     };
 
@@ -63,7 +66,7 @@ const SelectActivity = () =>{
                   <div className="parkByState">
                   <img id="imgPark" src={s.images[0].url} alt=""/>
                   <div className="textPark">
-                    <h2>{s.fullName+" - "+s.states}</h2>
+                    <h3>{s.fullName+" - "+s.states}</h3>
                     <p>{s.description}</p>
                     <button onClick={()=>openModal(s.id)}>More information</button>
                     <Modal
@@ -72,8 +75,8 @@ const SelectActivity = () =>{
                       style={customStyles}
                       contentLabel="Example Modal"
                     >
-                      <ParkInfo/>
-                      <button id='modalBtn' onClick={closeModal}>close</button>
+                      <button id='modalBtnClose' onClick={closeModal}>close</button>
+                      <ParkInfo id={parkSelect}/>
                     </Modal>
                   </div>
                 </div>

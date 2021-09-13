@@ -104,10 +104,11 @@ const SelectState = () =>{
           usImg.data.map((s)=>{
             return(
               <div className="parkByState">
-                <img id="imgPark" src={s.images[0].url} alt=""/>
-                <div id="text">
-                  
-                <button onClick={()=>openModal(s.id)}>More information</button>
+                  <img id="imgPark" src={s.images[0].url} alt=""/>
+                  <div className="textPark">
+                    <h3>{s.fullName}</h3>
+                    <p>{s.description}</p>
+                    <button onClick={()=>openModal(s.id)}>More information</button>
                     <Modal
                       isOpen={modalIsOpen}
                       onRequestClose={closeModal}
@@ -115,12 +116,10 @@ const SelectState = () =>{
                       contentLabel="Example Modal"
                     >
                       <ParkInfo id={parkSelect}/>
-                      <button onClick={closeModal}>close</button>
+                      <button id='modalBtnClose' onClick={closeModal}>close</button>
                     </Modal>
-                  
-                  <p>{s.description}</p>
+                  </div>
                 </div>
-              </div>
             )
           })
         } 
