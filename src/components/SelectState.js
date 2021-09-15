@@ -1,11 +1,37 @@
 import React from "react";
 import { useState } from "react";
-
-import {Link} from 'react-router-dom';
+import Modal from "react-modal";
+import ParkInfo from '../pages/ParkInfo';
 
 
 const SelectState = () =>{
     const[usImg, setUsImg]=useState(null);
+
+    const [modalIsOpen, setIsOpen] = React.useState(false);
+    
+    const [parkSelect, setParkSelect] = useState(null);
+
+    const customStyles = {
+      content: {
+        top: '50%',
+        left: '50%',
+        right: 'auto',
+        bottom: 'auto',
+        marginRight: '-50%',
+        transform: 'translate(-50%, -50%)',
+        width: '80%',
+        height: '90%',
+      },
+    };
+
+    function openModal(id) {
+      setIsOpen(true);
+      setParkSelect(id);
+    }
+
+    function closeModal() {
+      setIsOpen(false);
+    }
 
     const findState = (event)=>{
       let selection = event.target.value;
@@ -78,16 +104,22 @@ const SelectState = () =>{
           usImg.data.map((s)=>{
             return(
               <div className="parkByState">
-                <img id="imgPark" src={s.images[0].url} alt=""/>
-                <div id="text">
-                  
-                    <Link key={s.id} to={"./"+s.id}>
-                      <h2 className="h2SelectActivity">{s.fullName}</h2>
-                    </Link>
-                  
-                  <p>{s.description}</p>
+                  <img id="imgPark" src={s.images[0].url} alt=""/>
+                  <div className="textPark">
+                    <h3>{s.fullName}</h3>
+                    <p>{s.description}</p>
+                    <button onClick={()=>openModal(s.id)}>More information</button>
+                    <Modal
+                      isOpen={modalIsOpen}
+                      onRequestClose={closeModal}
+                      style={customStyles}
+                      contentLabel="Example Modal"
+                    >
+                      <ParkInfo id={parkSelect}/>
+                      <button id='modalBtnClose' onClick={closeModal}>close</button>
+                    </Modal>
+                  </div>
                 </div>
-              </div>
             )
           })
         } 

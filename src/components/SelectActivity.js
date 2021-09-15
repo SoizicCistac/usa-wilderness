@@ -1,10 +1,7 @@
 import React from "react";
 import { useState } from "react";
 import Modal from "react-modal";
-import { Link } from "react-router-dom";
-
-import ParkInfo from "../pages/ParkInfo";
-
+import ParkInfo from '../pages/ParkInfo';
 
 const SelectActivity = () =>{
 
@@ -12,6 +9,8 @@ const SelectActivity = () =>{
 
     const [modalIsOpen, setIsOpen] = React.useState(false);
     
+    const [parkSelect, setParkSelect] = useState(null);
+
     const customStyles = {
       content: {
         top: '50%',
@@ -20,19 +19,23 @@ const SelectActivity = () =>{
         bottom: 'auto',
         marginRight: '-50%',
         transform: 'translate(-50%, -50%)',
+        width: '80%',
+        height: '90%',
       },
     };
 
+    Modal.setAppElement('#root');
+
     const findActivity = (event)=>{
       let selection = event.target.value;
-      fetch ("https://developer.nps.gov/api/v1/parks?api_key=HtGeKfGroTqfT3YbR94d31DmbprYmSpMqBmo6jer&q="
-      +selection)
+      fetch ("https://developer.nps.gov/api/v1/parks?api_key=rZhcCrv2n16zgelgmIc2adI61HkaEArFIMeHhH6E&q="+selection)
         .then((resp)=>resp.json())
-        .then((data)=>setUsPark(data))
-    }
+        .then((data)=>setUsPark(data));
+    };
 
-    function openModal() {
+    function openModal(id) {
       setIsOpen(true);
+      setParkSelect(id);
     }
 
     function closeModal() {
@@ -57,23 +60,22 @@ const SelectActivity = () =>{
           usPark != null &&
           <div>
             {
-              
               usPark.data.map((s)=>{
                 return(
                   <div className="parkByState">
                   <img id="imgPark" src={s.images[0].url} alt=""/>
-                  <div id="text">
-                    <h2 className="h2SelectActivity">{s.fullName+" - "+s.states}</h2>
+                  <div className="textPark">
+                    <h3>{s.fullName+" - "+s.states}</h3>
                     <p>{s.description}</p>
-                    <button onClick={openModal}>More information</button>
+                    <button onClick={()=>openModal(s.id)}>More information</button>
                     <Modal
                       isOpen={modalIsOpen}
                       onRequestClose={closeModal}
                       style={customStyles}
                       contentLabel="Example Modal"
                     >
-                      <Link key={s.id} to={"./"+s.id}></Link>
-                      <button onClick={closeModal}>close</button>
+                      <button id='modalBtnClose' onClick={closeModal}>close</button>
+                      <ParkInfo id={parkSelect}/>
                     </Modal>
                   </div>
                 </div>
@@ -86,7 +88,5 @@ const SelectActivity = () =>{
       </div>
         )        
     }
-        
-    
     
     export default SelectActivity;

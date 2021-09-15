@@ -22,8 +22,9 @@
 }
 
 #imgPark{
-  width:500px;
-  height: auto;
+  width:50%;
+  height: 100%;
+  align-self: center;
 }
 
 #logo{
@@ -41,10 +42,14 @@
 
 .parkByState{
   display: flex;
+  flex-direction: row;
   margin : 80px;
 }
 
-.parkByState #text{
+.textPark{
+  display: flex;
+  flex-direction: column;
+  justify-content:flex-start;
   margin-left: 10px;
 }
 
@@ -239,7 +244,12 @@ h3{
   overflow:hidden;
 }
 
+.h2SelectActivity{
+  padding-top:0;
+}
+
 /*responsive*/
+
 @media screen and (max-width: 425px) {
   #imgFooter2,#imgFooter3,#imgFooter4,#imgFooter5
   {
@@ -259,7 +269,15 @@ h3{
     margin-top:1px!important;
     width:60%!important;
   }
+
+  .parkByState{
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+  }
 }
+
 @media screen and (max-width:768px) {
   #imgFooter3,#imgFooter4{
     display:none;
@@ -282,3 +300,4 @@ h3{
     width:45%;
   }
 }
+
