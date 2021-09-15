@@ -277,6 +277,7 @@ h3{
     margin-left:9%;
     margin-top:1px!important;
     width:60%!important;
+    font-size: 12px;
   }
 
   .parkByState{
@@ -284,6 +285,24 @@ h3{
     display: flex;
     flex-direction: column;
     margin: auto;
+    padding: 20px;
+  }
+
+  #imgPark{
+    width: 100%;
+  }
+
+  .textPark{
+    width: 90%;
+  }
+
+  .textPark h3{
+    padding-top: 15px;
+    padding-bottom: 15px;
+  }
+
+  .textPark p{
+    padding-bottom: 5px;
   }
 }
 
@@ -307,6 +326,21 @@ h3{
   .textFooter{
     margin-top:1px!important;
     width:45%;
+  }
+
+  .textPark h3{
+    font-size: 16px;
+  }
+
+  .textPark p{
+    font-size: 14px;
+  }
+
+  .parkByState{
+    width: 90%;
+    margin: auto;
+    padding-top: 20px;
+    padding-bottom: 20px;
   }
 }
 
