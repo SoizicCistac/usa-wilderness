@@ -1,6 +1,4 @@
 import React, {useEffect, useState} from 'react';
-import Menu from '../components/Menu';
-import Footer from '../components/Footer';
 import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet'
 import '../App.css';
 import 'leaflet/dist/leaflet.css';
@@ -25,13 +23,13 @@ function ParkInfo(props){
     const [parkInfo, setParkInfo] = useState(null);
 
     useEffect(()=>{
-        fetch("https://developer.nps.gov/api/v1/parks?api_key=HtGeKfGroTqfT3YbR94d31DmbprYmSpMqBmo6jer&id="+props.match.params.id)
+        fetch("https://developer.nps.gov/api/v1/parks?api_key=HtGeKfGroTqfT3YbR94d31DmbprYmSpMqBmo6jer&id="+props.id)
             .then((resp)=>resp.json())
-            .then((data)=> setParkInfo(data))
+            .then((data)=> setParkInfo(data));
     }, []);
 
     useEffect(()=>{
-        fetch('https://developer.nps.gov/api/v1/parks?api_key=1zZ6Jzg2ZXCy0Lr9fwlHdv9GIxcxGv4IWgePmqe2&id='+props.match.params.id)
+        fetch('https://developer.nps.gov/api/v1/parks?api_key=1zZ6Jzg2ZXCy0Lr9fwlHdv9GIxcxGv4IWgePmqe2&id='+props.id)
           .then((resp)=>resp.json())
           .then((data)=>setImageSlider(data.data[0].images));
       }, []);
@@ -47,7 +45,6 @@ function ParkInfo(props){
 
     return(
         <div>
-            <Menu/>
             {
                 parkInfo != null &&
                     parkInfo.data.map((park)=>{
@@ -89,7 +86,6 @@ function ParkInfo(props){
                         );
                     })
             }
-            <Footer/>
         </div>
     )
 }
