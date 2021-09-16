@@ -242,7 +242,7 @@ h3{
 
 .divContainer{
   max-width: 1000px;
-  max-height: 500px;
+  max-height: 600px;
   display: flex;
   margin: auto;
   overflow:hidden;
@@ -341,6 +341,9 @@ h3{
     margin: auto;
     padding-top: 20px;
     padding-bottom: 20px;
+  }
+  .divContainer{
+    margin-left:-117px;
   }
 }
 
