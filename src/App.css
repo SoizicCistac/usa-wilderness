@@ -304,6 +304,30 @@ h3{
   .textPark p{
     padding-bottom: 5px;
   }
+
+  .imageSlider>p{
+    object-fit:contain;
+  }
+  .mapAndDirection{
+    flex-direction:column;
+  }
+
+  .textDirection{
+    width:100%;
+    text-align:center;
+    margin-left:-6px;
+  }
+  .textDirection>p{
+    padding-top:10px;
+    margin-left:12px;
+  }
+  .slider{
+    width:354px;
+    margin-left:42px;
+  }
+  .imageSlider>p{
+    text-align:center;
+  }
 }
 
 @media screen and (max-width:768px) {
