@@ -74,8 +74,8 @@ const SelectActivity = () =>{
                       style={customStyles}
                       contentLabel="Example Modal"
                     >
-                      <button id='modalBtnClose' onClick={closeModal}>close</button>
                       <ParkInfo id={parkSelect}/>
+                      <button id='modalBtnClose' onClick={closeModal}>close</button>
                     </Modal>
                   </div>
                 </div>
