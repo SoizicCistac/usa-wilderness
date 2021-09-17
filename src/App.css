@@ -159,7 +159,7 @@ h3{
 
 #imgFooter1{
   height:98%;
-  margin-top:-1%;
+  margin-top:2px;
 }
 
 #imgFooter2{
@@ -270,7 +270,7 @@ h3{
     display:none;
   }
   #imgFooter1{
-    margin-top:-1.5%;
+    margin-top:3px;
     margin-left:1px!important;
   }
   .footer{

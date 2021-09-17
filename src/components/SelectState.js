@@ -35,11 +35,7 @@ const SelectState = () =>{
 
     const findState = (event)=>{
       let selection = event.target.value;
-<<<<<<< HEAD
-      fetch ("https://developer.nps.gov/api/v1/parks?api_key=HsUV7WE7sPBToPWUjgP0dAnZbTGepLcxiX9NtHFt&stateCode="+selection)
-=======
       fetch ("https://developer.nps.gov/api/v1/parks?api_key=rZhcCrv2n16zgelgmIc2adI61HkaEArFIMeHhH6E&stateCode="+selection)
->>>>>>> 6e9cedc4ddacd9c77c9495b46a2d56b359bb2116
         .then((resp)=>resp.json())
         .then((data)=>setUsImg(data))
     }
