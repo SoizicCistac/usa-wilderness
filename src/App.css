@@ -239,6 +239,9 @@ h3{
   width: 600px;
   height: 600px;
 }
+.imageSlider+p{
+  text-align:center!important;
+}
 
 .divContainer{
   max-width: 1000px;
@@ -278,6 +281,9 @@ h3{
     margin-top:1px!important;
     width:60%!important;
     font-size: 12px;
+  }
+  .textFooter>p{
+    margin-top:8px!important;
   }
 
   .parkByState{
@@ -319,14 +325,15 @@ h3{
   }
   .textDirection>p{
     padding-top:10px;
-    margin-left:12px;
+    margin-left:25px;
+    margin-right:17px;
   }
   .slider{
     width:354px;
     margin-left:42px;
   }
-  .imageSlider>p{
-    text-align:center;
+  .imageSlider+p{
+    text-align:center!important;
   }
 }
 
@@ -368,6 +375,9 @@ h3{
   }
   .divContainer{
     margin-left:-117px;
+  }
+  .imageSlider+p{
+    text-align:center!important;
   }
 }
 
