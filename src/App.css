@@ -255,10 +255,12 @@ h3{
   padding-top:0;
 }
 #modalBtnClose{
-  width: 40%;
-  margin-bottom: 100px;
-  margin-left: 25%;
+    width: 40%;
+    margin-left: 29%;
+    position: relative;
+    bottom: 50px;
 }
+
 
 /*responsive*/
 
