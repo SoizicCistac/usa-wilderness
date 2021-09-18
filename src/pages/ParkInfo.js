@@ -26,13 +26,11 @@ function ParkInfo(props){
         fetch("https://developer.nps.gov/api/v1/parks?api_key=rZhcCrv2n16zgelgmIc2adI61HkaEArFIMeHhH6E&id="+props.id)
             .then((resp)=>resp.json())
             .then((data)=> setParkInfo(data));
+        fetch('https://developer.nps.gov/api/v1/parks?api_key=rZhcCrv2n16zgelgmIc2adI61HkaEArFIMeHhH6E&id='+props.id)
+            .then((resp)=>resp.json())
+            .then((data)=>setImageSlider(data.data[0].images));
     }, []);
 
-    useEffect(()=>{
-        fetch('https://developer.nps.gov/api/v1/parks?api_key=rZhcCrv2n16zgelgmIc2adI61HkaEArFIMeHhH6E&id='+props.id)
-          .then((resp)=>resp.json())
-          .then((data)=>setImageSlider(data.data[0].images));
-      }, []);
 
       const settings = {
         dots: true,
