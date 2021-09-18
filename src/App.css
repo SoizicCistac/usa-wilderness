@@ -159,7 +159,7 @@ h3{
 
 #imgFooter1{
   height:98%;
-  margin-top:-1%;
+  margin-top:2px;
 }
 
 #imgFooter2{
@@ -239,10 +239,13 @@ h3{
   width: 600px;
   height: 600px;
 }
+.imageSlider+p{
+  text-align:center!important;
+}
 
 .divContainer{
   max-width: 1000px;
-  max-height: 500px;
+  max-height: 600px;
   display: flex;
   margin: auto;
   overflow:hidden;
@@ -267,7 +270,7 @@ h3{
     display:none;
   }
   #imgFooter1{
-    margin-top:-1.5%;
+    margin-top:3px;
     margin-left:1px!important;
   }
   .footer{
@@ -280,6 +283,9 @@ h3{
     margin-top:1px!important;
     width:60%!important;
     font-size: 12px;
+  }
+  .textFooter>p{
+    margin-top:8px!important;
   }
 
   .parkByState{
@@ -305,6 +311,31 @@ h3{
 
   .textPark p{
     padding-bottom: 5px;
+  }
+
+  .imageSlider>p{
+    object-fit:contain;
+  }
+  .mapAndDirection{
+    flex-direction:column;
+  }
+
+  .textDirection{
+    width:100%;
+    text-align:center;
+    margin-left:-6px;
+  }
+  .textDirection>p{
+    padding-top:10px;
+    margin-left:25px;
+    margin-right:17px;
+  }
+  .slider{
+    width:354px;
+    margin-left:42px;
+  }
+  .imageSlider+p{
+    text-align:center!important;
   }
 }
 
@@ -343,6 +374,12 @@ h3{
     margin: auto;
     padding-top: 20px;
     padding-bottom: 20px;
+  }
+  .divContainer{
+    margin-left:-117px;
+  }
+  .imageSlider+p{
+    text-align:center!important;
   }
 }
 
