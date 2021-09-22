@@ -5,7 +5,7 @@ import 'leaflet/dist/leaflet.css';
 import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
-import L from 'leaflet';
+import L, { circle } from 'leaflet';
 
 import icon from 'leaflet/dist/images/marker-icon.png';
 import iconShadow from 'leaflet/dist/images/marker-shadow.png';
@@ -21,6 +21,7 @@ function ParkInfo(props){
 
     const [imageSlider, setImageSlider] = useState([]);
     const [parkInfo, setParkInfo] = useState(null);
+    const [bandeau,setBandeau] = useState(null);
 
     useEffect(()=>{
         fetch("https://developer.nps.gov/api/v1/parks?api_key=rZhcCrv2n16zgelgmIc2adI61HkaEArFIMeHhH6E&id="+props.id)
@@ -29,8 +30,10 @@ function ParkInfo(props){
         fetch('https://developer.nps.gov/api/v1/parks?api_key=rZhcCrv2n16zgelgmIc2adI61HkaEArFIMeHhH6E&id='+props.id)
             .then((resp)=>resp.json())
             .then((data)=>setImageSlider(data.data[0].images));
+        fetch('https://developer.nps.gov/api/v1/alerts?api_key=rZhcCrv2n16zgelgmIc2adI61HkaEArFIMeHhH6E&limit=2&id='+props.id)
+            .then((resp)=>resp.json())
+            .then((data)=>console.log(data));      
     }, []);
-
 
       const settings = {
         dots: true,
@@ -48,20 +51,26 @@ function ParkInfo(props){
                     parkInfo.data.map((park)=>{
                         return(
                             <div className="infoDiv">
-                                  <h2>{park.fullName}</h2>
-                                  <div className='divContainer'>
-                                     <Slider className='slider' {...settings}>
-                                            {
-                                                imageSlider != null &&
-                                                imageSlider.map((image)=>{
-                                                    return <div key={image.title}>
-                                                    <img src={image.url} alt={image.altText} className='imageSlider'/>
-                                                    <p>{image.caption}</p>
-                                                    </div>
-                                                })
-                                            }
-                                        </Slider>
-                                 </div>
+                            {
+                                bandeau !=null &&
+                                bandeau.data.map((p)=>{
+                                    return <p>{p.title}</p>
+                                })
+                            }
+                                <h2>{park.fullName}</h2>
+                                <div className='divContainer'>
+                                <Slider className='slider' {...settings}>
+                                    {
+                                        imageSlider != null &&
+                                        imageSlider.map((image)=>{
+                                        return <div key={image.title}>
+                                            <img src={image.url} alt={image.altText} className='imageSlider'/>
+                                            <p>{image.caption}</p>
+                                            </div>
+                                        })
+                                    }
+                                </Slider>
+                                </div>
                                   <div className="mapAndDirection">
                                     <MapContainer className="card" center={[parseFloat(park.latitude), parseFloat(park.longitude)]} zoom={13} scrollWheelZoom={false}>
                                         <TileLayer
@@ -79,8 +88,7 @@ function ParkInfo(props){
                                         <p>{park.directionsInfo}</p>
                                     </div>  
                                   </div>
-                            </div>
-                                                
+                            </div>                        
                         );
                     })
             }
