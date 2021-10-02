@@ -254,11 +254,42 @@ h3{
 .h2SelectActivity{
   padding-top:0;
 }
+
 #modalBtnClose{
     width: 40%;
     margin-left: 29%;
     position: relative;
     bottom: 50px;
+}
+.bandeau{
+  margin-top:65px;
+  font-family: var(--fourth-font);
+}
+.bcategory{
+  position:relative;
+  color:red;
+  text-decoration:underline;
+}
+.btitle{
+  color:red;
+  text-decoration:underline;
+}
+.blaid>p{
+  position:absolute;
+  margin-left:450px;
+  margin-top:-132px;
+}
+.bdescription>p{
+  margin-bottom:15px;
+}
+.alert{
+  font-family: var(--fourth-font);
+  font-size:large;
+  margin-top:70px!important;
+  text-align:center;
+  background:black;
+  color:white;
+  width:70px;
 }
 
 

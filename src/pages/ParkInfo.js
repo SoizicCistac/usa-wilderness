@@ -26,13 +26,17 @@ function ParkInfo(props){
     useEffect(()=>{
         fetch("https://developer.nps.gov/api/v1/parks?api_key=rZhcCrv2n16zgelgmIc2adI61HkaEArFIMeHhH6E&id="+props.id)
             .then((resp)=>resp.json())
-            .then((data)=> setParkInfo(data));
+            .then((data)=> {
+                setParkInfo(data);
+                let parkCode=data.data[0].parkCode;
+                console.log(parkCode);
+                fetch('https://developer.nps.gov/api/v1/alerts?api_key=rZhcCrv2n16zgelgmIc2adI61HkaEArFIMeHhH6E&limit=2&parkCode='+parkCode)
+                    .then((resp)=>resp.json())
+                    .then((data)=>setBandeau(data));
+            });
         fetch('https://developer.nps.gov/api/v1/parks?api_key=rZhcCrv2n16zgelgmIc2adI61HkaEArFIMeHhH6E&id='+props.id)
             .then((resp)=>resp.json())
-            .then((data)=>setImageSlider(data.data[0].images));
-        fetch('https://developer.nps.gov/api/v1/alerts?api_key=rZhcCrv2n16zgelgmIc2adI61HkaEArFIMeHhH6E&limit=2&id='+props.id)
-            .then((resp)=>resp.json())
-            .then((data)=>console.log(data));      
+            .then((data)=>setImageSlider(data.data[0].images));      
     }, []);
 
       const settings = {
@@ -43,6 +47,14 @@ function ParkInfo(props){
         slidesToScroll: 1
       };
     
+    function convertDate(dateText){
+        let date=new Date(dateText);
+        return(date.getFullYear()+"-"
+                + date.getMonth()+"-"
+                + date.getDay()+" "
+                + date.getUTCHours()+":"
+                + ("0"+date.getMinutes()).substr(-2))
+    }
 
     return(
         <div>
@@ -51,10 +63,21 @@ function ParkInfo(props){
                     parkInfo.data.map((park)=>{
                         return(
                             <div className="infoDiv">
+                            {(bandeau !=null && bandeau.data.length>0) &&
+                                <p className="alert">ALERTS</p>
+                            }
                             {
                                 bandeau !=null &&
                                 bandeau.data.map((p)=>{
-                                    return <p>{p.title}</p>
+                                    return <div className="bandeau" key={p.category}>
+                                    <div className="bcategory"><p>{p.category}</p></div>
+                                    <br></br>
+                                    <div className="btitle"><p>{p.title}</p></div>
+                                    <br></br>
+                                    <div className="bdescription"><p>{p.description}</p></div>
+                                    <div className="blaid"><p>{convertDate(p.lastIndexedDate)}</p></div>
+                                    <hr></hr>
+                                    </div>
                                 })
                             }
                                 <h2>{park.fullName}</h2>
