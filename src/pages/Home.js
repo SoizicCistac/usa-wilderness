@@ -9,9 +9,7 @@ function Home () {
     return(
         <div>
             <Menu/>
-
             <h1>USA Wilderness</h1>
-
             <div id='state'>
                 <Link id="buttonState" to='/park'>
                         Select a park by State
