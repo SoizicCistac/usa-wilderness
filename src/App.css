@@ -255,12 +255,7 @@ h3{
   padding-top:0;
 }
 
-#modalBtnClose{
-    width: 40%;
-    margin-left: 29%;
-    position: relative;
-    bottom: 50px;
-}
+
 .bandeau{
   margin-top:65px;
   font-family: var(--fourth-font);
@@ -328,7 +323,7 @@ h3{
   }
 
   #imgPark{
-    width: 100%;
+    width: 200%;
   }
 
   .textPark{
@@ -414,3 +409,23 @@ h3{
   }
 }
 
+#modalBtnClose{
+  float: right;
+  margin-bottom: 125px;
+  background: none;
+  border: 2px solid;
+  font: inherit;
+  line-height: 1;
+  padding: 25px;
+  box-shadow: 
+    0.3em 0.3em 0 0 var(--light-green),
+    inset 0.3em 0.3em 0 0 var(--light-green);
+}
+
+#modalBtnClose:hover,:focus {
+    box-shadow: 
+    0 0 0 0 var(--green),
+    inset 6em 3.5em 0 0 var(--green);
+    transition: 0.25s;
+    color:white;
+}
