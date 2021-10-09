@@ -8,7 +8,7 @@ function Park () {
     return(
         <div className="main">
             <Menu/>
-            <h2>Select Park by State</h2>
+            <h1>Select Park by State</h1>
             <SelectState/>
             <Footer/>
         </div>
