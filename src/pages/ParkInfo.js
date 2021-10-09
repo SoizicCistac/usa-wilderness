@@ -24,17 +24,17 @@ function ParkInfo(props){
     const [bandeau, setBandeau] = useState(null)
 
     useEffect(()=>{
-        fetch("https://developer.nps.gov/api/v1/parks?api_key=HsUV7WE7sPBToPWUjgP0dAnZbTGepLcxiX9NtHFt&id="+props.id)
+        fetch("https://developer.nps.gov/api/v1/parks?api_key=soK1ork1zAMFM5QamP9JJfeAK8mq85HPKTLMf57d&id="+props.id)
             .then((resp)=>resp.json())
             .then((data)=> {
                 setParkInfo(data);
                 let parkCode=data.data[0].parkCode;
                 console.log(parkCode);
-                fetch('https://developer.nps.gov/api/v1/alerts?api_key=rZhcCrv2n16zgelgmIc2adI61HkaEArFIMeHhH6E&limit=2&parkCode='+parkCode)
+                fetch('https://developer.nps.gov/api/v1/alerts?api_key=DD3tw4VvxXDLncBIh6tC6h995e70p9ZewKZs5EWc&limit=2&parkCode='+parkCode)
                     .then((resp)=>resp.json())
                     .then((data)=>setBandeau(data));
             });
-        fetch('https://developer.nps.gov/api/v1/parks?api_key=rZhcCrv2n16zgelgmIc2adI61HkaEArFIMeHhH6E&id='+props.id)
+        fetch('https://developer.nps.gov/api/v1/parks?api_key=kObkkskUHJM28c14EE9aAORY823ENgoCnvj1KsIj&id='+props.id)
             .then((resp)=>resp.json())
             .then((data)=>setImageSlider(data.data[0].images));      
     }, []);
@@ -76,7 +76,8 @@ function ParkInfo(props){
                                         })
                                     }
                                 </Slider>
-                                </div>                                <div className="mapAndDirection">
+                                </div>                                
+                                <div className="mapAndDirection">
                                     <MapContainer className="card" center={[parseFloat(park.latitude), parseFloat(park.longitude)]} zoom={13} scrollWheelZoom={false}>
                                         <TileLayer
                                             attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
