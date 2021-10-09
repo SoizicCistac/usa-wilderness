@@ -70,6 +70,7 @@ function ParkInfo(props){
                                         imageSlider != null &&
                                         imageSlider.map((image)=>{
                                         return <div key={image.title}>
+                                            <p>Swipe to see more pictures</p>
                                             <img src={image.url} alt={image.altText} className='imageSlider'/>
                                             <p>{image.caption}</p>
                                             </div>

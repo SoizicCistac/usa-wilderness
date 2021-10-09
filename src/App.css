@@ -74,6 +74,7 @@ body{
 
 h1{
   font-family: var(--first-font);
+  color: var(--brown);
   text-align: center;
   font-size: 60px;
   padding-top: 120px;
@@ -428,7 +429,7 @@ h3{
     inset 0.3em 0.3em 0 0 var(--light-green);
 }
 
-#modalBtnClose:hover,:focus {
+#modalBtnClose:hover,#modalBtnClose:focus {
     box-shadow: 
     0 0 0 0 var(--green),
     inset 6em 3.5em 0 0 var(--green);
