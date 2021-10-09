@@ -7,8 +7,6 @@ import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import L from 'leaflet';
 
-import Alerts from '../components/Alerts';
-
 import icon from 'leaflet/dist/images/marker-icon.png';
 import iconShadow from 'leaflet/dist/images/marker-shadow.png';
 
@@ -23,14 +21,22 @@ function ParkInfo(props){
 
     const [imageSlider, setImageSlider] = useState([]);
     const [parkInfo, setParkInfo] = useState(null);
+    const [bandeau, setBandeau] = useState(null)
 
     useEffect(()=>{
         fetch("https://developer.nps.gov/api/v1/parks?api_key=HsUV7WE7sPBToPWUjgP0dAnZbTGepLcxiX9NtHFt&id="+props.id)
             .then((resp)=>resp.json())
-            .then((data)=> setParkInfo(data));
-        fetch('https://developer.nps.gov/api/v1/parks?api_key=HsUV7WE7sPBToPWUjgP0dAnZbTGepLcxiX9NtHFt&id='+props.id)
+            .then((data)=> {
+                setParkInfo(data);
+                let parkCode=data.data[0].parkCode;
+                console.log(parkCode);
+                fetch('https://developer.nps.gov/api/v1/alerts?api_key=rZhcCrv2n16zgelgmIc2adI61HkaEArFIMeHhH6E&limit=2&parkCode='+parkCode)
+                    .then((resp)=>resp.json())
+                    .then((data)=>setBandeau(data));
+            });
+        fetch('https://developer.nps.gov/api/v1/parks?api_key=rZhcCrv2n16zgelgmIc2adI61HkaEArFIMeHhH6E&id='+props.id)
             .then((resp)=>resp.json())
-            .then((data)=>setImageSlider(data.data[0].images));  
+            .then((data)=>setImageSlider(data.data[0].images));      
     }, []);
 
       const settings = {
@@ -41,6 +47,14 @@ function ParkInfo(props){
         slidesToScroll: 1
       };
     
+    function convertDate(dateText){
+        let date=new Date(dateText);
+        return(date.getFullYear()+"-"
+                + date.getMonth()+"-"
+                + date.getDay()+" "
+                + date.getUTCHours()+":"
+                + ("0"+date.getMinutes()).substr(-2))
+    }
 
     return(
         <div>
@@ -62,9 +76,7 @@ function ParkInfo(props){
                                         })
                                     }
                                 </Slider>
-                                </div>
-                                <Alerts />
-                                <div className="mapAndDirection">
+                                </div>                                <div className="mapAndDirection">
                                     <MapContainer className="card" center={[parseFloat(park.latitude), parseFloat(park.longitude)]} zoom={13} scrollWheelZoom={false}>
                                         <TileLayer
                                             attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
@@ -80,7 +92,24 @@ function ParkInfo(props){
                                         <h3>How to go there?</h3>
                                         <p>{park.directionsInfo}</p>
                                     </div>  
-                                  </div>
+                                </div>
+                                {(bandeau !=null && bandeau.data.length>0) &&
+                                    <p className="alert">ALERTS</p>
+                                }
+                                {
+                                    bandeau !=null &&
+                                    bandeau.data.map((p)=>{
+                                        return <div className="bandeau" key={p.category}>
+                                        <div className="bcategory"><p>{p.category}</p></div>
+                                        <br></br>
+                                        <div className="btitle"><p>{p.title}</p></div>
+                                        <br></br>
+                                        <div className="bdescription"><p>{p.description}</p></div>
+                                        <div className="blaid"><p>{convertDate(p.lastIndexedDate)}</p></div>
+                                        <hr></hr>
+                                        </div>
+                                    })
+                                }  
                             </div>                        
                         );
                     })
