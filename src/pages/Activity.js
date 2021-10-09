@@ -9,7 +9,7 @@ function Activity () {
         <>
         <div className="main">
             <Menu/>
-            <h2>Select Park by Activity</h2>
+            <h1>Select Park by Activity</h1>
             <SelectActivity/>
             
         </div>
