@@ -63,23 +63,6 @@ function ParkInfo(props){
                     parkInfo.data.map((park)=>{
                         return(
                             <div className="infoDiv">
-                            {(bandeau !=null && bandeau.data.length>0) &&
-                                <p className="alert">ALERTS</p>
-                            }
-                            {
-                                bandeau !=null &&
-                                bandeau.data.map((p)=>{
-                                    return <div className="bandeau" key={p.category}>
-                                    <div className="bcategory"><p>{p.category}</p></div>
-                                    <br></br>
-                                    <div className="btitle"><p>{p.title}</p></div>
-                                    <br></br>
-                                    <div className="bdescription"><p>{p.description}</p></div>
-                                    <div className="blaid"><p>{convertDate(p.lastIndexedDate)}</p></div>
-                                    <hr></hr>
-                                    </div>
-                                })
-                            }
                                 <h2>{park.fullName}</h2>
                                 <div className='divContainer'>
                                 <Slider className='slider' {...settings}>
@@ -94,7 +77,7 @@ function ParkInfo(props){
                                     }
                                 </Slider>
                                 </div>
-                                  <div className="mapAndDirection">
+                                <div className="mapAndDirection">
                                     <MapContainer className="card" center={[parseFloat(park.latitude), parseFloat(park.longitude)]} zoom={13} scrollWheelZoom={false}>
                                         <TileLayer
                                             attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
@@ -110,7 +93,24 @@ function ParkInfo(props){
                                         <h3>How to go there?</h3>
                                         <p>{park.directionsInfo}</p>
                                     </div>  
-                                  </div>
+                                </div>
+                                {(bandeau !=null && bandeau.data.length>0) &&
+                                    <p className="alert">ALERTS</p>
+                                }
+                                {
+                                    bandeau !=null &&
+                                    bandeau.data.map((p)=>{
+                                        return <div className="bandeau" key={p.category}>
+                                        <div className="bcategory"><p>{p.category}</p></div>
+                                        <br></br>
+                                        <div className="btitle"><p>{p.title}</p></div>
+                                        <br></br>
+                                        <div className="bdescription"><p>{p.description}</p></div>
+                                        <div className="blaid"><p>{convertDate(p.lastIndexedDate)}</p></div>
+                                        <hr></hr>
+                                        </div>
+                                    })
+                                }  
                             </div>                        
                         );
                     })
