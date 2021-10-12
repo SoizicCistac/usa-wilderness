@@ -42,7 +42,7 @@ const SelectState = () =>{
     
     return(
     <div id="stateUS">
-    <select onChange={findState}>
+    <select className="btnSelect" onChange={findState}>
       <option value="">Choose a State</option>
       <option value="AL">Alabama</option>
       <option value="AK">Alaska</option>
@@ -108,7 +108,7 @@ const SelectState = () =>{
                   <div className="textPark">
                     <h3>{s.fullName}</h3>
                     <p>{s.description}</p>
-                    <button onClick={()=>openModal(s.id)}>More information</button>
+                    <button className="btnInfo" onClick={()=>openModal(s.id)}>More information</button>
                     <Modal
                       isOpen={modalIsOpen}
                       onRequestClose={closeModal}

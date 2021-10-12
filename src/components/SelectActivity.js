@@ -44,7 +44,7 @@ const SelectActivity = () =>{
 
     return(
         <div id="activity">
-        <select onChange={findActivity}>
+        <select className="btnSelect" onChange={findActivity}>
           <option value="">Choose an activity</option>
           <option value="biking">Biking</option>
           <option value="camping">Camping</option>
@@ -67,7 +67,7 @@ const SelectActivity = () =>{
                   <div className="textPark">
                     <h3>{s.fullName+" - "+s.states}</h3>
                     <p>{s.description}</p>
-                    <button onClick={()=>openModal(s.id)}>More information</button>
+                    <button className="btnInfo" onClick={()=>openModal(s.id)}>More information</button>
                     <Modal
                       isOpen={modalIsOpen}
                       onRequestClose={closeModal}

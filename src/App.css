@@ -12,6 +12,7 @@
 *{
   margin: 0;
   padding: 0;
+  font-family: var(--second-font);
 }
 
 body{
@@ -202,14 +203,12 @@ h3{
   align-items: center;
 }
 
-
 .leaflet-container{
   width: 400px;
   height: 300px;
   margin-bottom: 30px;
   z-index: 0;
 }
-
 
 .infoDiv > p{
   margin-top: 20px;
@@ -287,6 +286,25 @@ h3{
   width:70px;
 }
 
+.btnInfo{
+  width: 50%;
+  margin: 10px auto;
+  padding: 10px;
+  border-radius: 15px;
+  background-color: var(--brown);
+  color: white;
+  font-weight: 600;
+  font-size: 16px;
+}
+
+.btnSelect{
+  padding: 10px;
+  border-radius: 10px;
+  background-color: var(--brown);
+  color: white;
+  font-weight: 600;
+  margin: auto;
+}
 
 /*responsive*/
 
@@ -322,7 +340,7 @@ h3{
   }
 
   #imgPark{
-    width: 200%;
+    width: 100%;
   }
 
   .textPark{
@@ -361,6 +379,10 @@ h3{
   }
   .imageSlider+p{
     text-align:center!important;
+  }
+
+  .btnInfo{
+    width: 75%;
   }
 }
 
