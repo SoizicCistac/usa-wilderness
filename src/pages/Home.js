@@ -11,12 +11,12 @@ function Home () {
             <Menu/>
             <h1>USA Wilderness</h1>
             <div id='state'>
-                <Link id="buttonState" to='/park'>
+                <Link className="buttonHome" to='/park'>
                         Select a park by State
                 </Link>
             </div>
             <div id='activity'>
-                <Link id="buttonActivity" to='/activity'>
+                <Link className="buttonHome" to='/activity'>
                         Select a park by Activity
                 </Link>
             </div>
