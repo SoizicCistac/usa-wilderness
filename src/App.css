@@ -13,6 +13,7 @@
   margin: 0;
   padding: 0;
   font-family: var(--second-font);
+  text-decoration: none;
 }
 
 body{
@@ -50,6 +51,7 @@ body{
   padding: 10px;
   border: solid 1px #333;
   box-shadow: 5px 5px 5px rgb(160, 160, 160);
+  border-radius: 10px;
 }
 
 .textPark{
@@ -196,7 +198,7 @@ h3{
 
 .infoDiv{
   display: flex;
-  width: 60%;
+  width: 90%;
   margin: auto;
   flex-direction: column;
   justify-content: center;
@@ -240,6 +242,12 @@ h3{
   width: 600px;
   height: 600px;
 }
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
 .imageSlider+p{
   text-align:center!important;
 }
@@ -257,14 +265,19 @@ h3{
 }
 
 .bandeau{
+  width: 70%;
   margin-top:65px;
-  font-family: var(--fourth-font);
+  font-family: var(--second-font);
 }
+
 .bcategory{
   position:relative;
   color:red;
   text-decoration:underline;
+  font-weight: 500;
+  text-transform: uppercase;
 }
+
 .btitle{
   color:red;
   text-decoration:underline;
@@ -313,6 +326,11 @@ h3{
   {
     display:none;
   }
+
+  h1{
+    font-size: 34px;
+  }
+
   #imgFooter1{
     margin-top:3px;
     margin-left:1px!important;
@@ -361,6 +379,7 @@ h3{
   }
   .mapAndDirection{
     flex-direction:column;
+    margin-top: -200px;
   }
 
   .textDirection{
@@ -387,6 +406,7 @@ h3{
 }
 
 @media screen and (max-width:768px) {
+
   #imgFooter3,#imgFooter4{
     display:none;
   }
@@ -402,6 +422,10 @@ h3{
     height: 60%;
     margin-top: 20px;
     margin-left: -7%;
+  }
+
+  .infoDiv{
+    width: 60%;
   }
 
   .textFooter{
@@ -450,4 +474,43 @@ h3{
     inset 6em 3.5em 0 0 var(--green);
     transition: 0.25s;
     color:white;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 5s linear;
+  }
+}
+
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotateY(0deg);
+  }
+  to {
+    transform: rotateY(360deg);
+  }
+}
+
+.btnEnter{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  width: 100px;
+  margin: 50px auto;
+  border-radius: 10px;
+  border-color: var(--light-green);
+}
+
+.btnEnter:hover{
+  background-color: var(--light-green);
+  color:white !important;
+  font-weight: 500;
+  box-shadow: 5px 5px 5px var(--green);
+}
+
+.container-home{
+  text-align: center;
 }
