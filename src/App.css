@@ -502,15 +502,25 @@ h3{
   margin: 50px auto;
   border-radius: 10px;
   border-color: var(--light-green);
+  text-decoration: none !important;
+  color: #333;
+  font-size: 20px;
 }
 
 .btnEnter:hover{
   background-color: var(--light-green);
-  color:white !important;
-  font-weight: 500;
   box-shadow: 5px 5px 5px var(--green);
 }
 
 .container-home{
   text-align: center;
+}
+
+.enter:visited{
+  color: #333;
+}
+
+.enter:hover{
+  color:white !important;
+  font-weight: 500;
 }

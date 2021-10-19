@@ -9,7 +9,7 @@ function Home() {
           <h1>USA Wilderness</h1>
           <img src={logo} className="App-logo" alt="logo" />
           <button className="btnEnter">
-              <Link to='/select'>
+              <Link className='enter' to='/select'>
             Enter
                 </Link>
             </button>
