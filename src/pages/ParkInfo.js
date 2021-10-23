@@ -55,6 +55,10 @@ function ParkInfo(props){
                 + date.getUTCHours()+":"
                 + ("0"+date.getMinutes()).substr(-2))
     }
+    
+    let now= new Date();
+    let currentFullYear=now.getFullYear();
+    let currentMonth=now.getMonth();
 
     return(
         <div>
@@ -94,12 +98,18 @@ function ParkInfo(props){
                                         <p>{park.directionsInfo}</p>
                                     </div>  
                                 </div>
-                                {(bandeau !=null && bandeau.data.length>0) &&
-                                    <p className="alert">ALERTS</p>
+                                {   
+                                    (bandeau !=null && bandeau.data.length>0) &&
+                                        bandeau.data.filter((p)=>
+                                        convertDate(p.lastIndexedDate.slice(0,4))==currentFullYear
+                                        )
+                                        .map((filteredAlert)=>{                                        
+                                            console.log(convertDate(filteredAlert.lastIndexedDate.slice(0,4)))
+                                        })
                                 }
                                 {
-                                    bandeau !=null &&
-                                    bandeau.data.map((p)=>{
+                                    (bandeau !=null && bandeau.data.length>0) &&
+                                        bandeau.data.map((p)=>{
                                         return <div className="bandeau" key={p.category}>
                                         <div className="bcategory"><p>{p.category}</p></div>
                                         <br></br>
