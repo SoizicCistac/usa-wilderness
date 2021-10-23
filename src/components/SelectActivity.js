@@ -11,7 +11,7 @@ const SelectActivity = () =>{
     
     const [parkSelect, setParkSelect] = useState(null);
 
-    const customStyles = {
+    const customStyles = { //settings for the modal
       content: {
         top: '50%',
         left: '50%',
@@ -26,14 +26,14 @@ const SelectActivity = () =>{
 
     Modal.setAppElement('#root');
 
-    const findActivity = (event)=>{
+    const findActivity = (event)=>{ //get data from API
       let selection = event.target.value;
       fetch ("https://developer.nps.gov/api/v1/parks?api_key=HtGeKfGroTqfT3YbR94d31DmbprYmSpMqBmo6jer&q="+selection)
         .then((resp)=>resp.json())
         .then((data)=>setUsPark(data));
     };
 
-    function openModal(id) {
+    function openModal(id) { 
       setIsOpen(true);
       setParkSelect(id);
     }
@@ -44,7 +44,7 @@ const SelectActivity = () =>{
 
     return(
         <div id="activity">
-        <select onChange={findActivity}>
+        <select className="btnSelect" onChange={findActivity}>
           <option value="">Choose an activity</option>
           <option value="biking">Biking</option>
           <option value="camping">Camping</option>
@@ -67,7 +67,7 @@ const SelectActivity = () =>{
                   <div className="textPark">
                     <h3>{s.fullName+" - "+s.states}</h3>
                     <p>{s.description}</p>
-                    <button onClick={()=>openModal(s.id)}>More information</button>
+                    <button className="btnInfo" onClick={()=>openModal(s.id)}>More information</button>
                     <Modal
                       isOpen={modalIsOpen}
                       onRequestClose={closeModal}

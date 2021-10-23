@@ -1,30 +1,21 @@
-import React from 'react';
-import Menu from '../components/Menu';
-import Footer from '../components/Footer';
+import React from 'react'
+import logo from "../components/img/logo.png"
 import {Link} from 'react-router-dom';
 
 
-
-function Home () {
-    return(
-        <div>
-            <Menu/>
-            <h1>USA Wilderness</h1>
-            <div id='state'>
-                <Link id="buttonState" to='/park'>
-                        Select a park by State
+function Home() {
+    return (
+        <div className="container-home">
+          <h1>USA Wilderness</h1>
+          <img src={logo} className="App-logo" alt="logo" />
+          <button className="btnEnter">
+              <Link className='enter' to='/select'>
+            Enter
                 </Link>
-            </div>
-            <div id='activity'>
-                <Link id="buttonActivity" to='/activity'>
-                        Select a park by Activity
-                </Link>
-            </div>
-            
-            <Footer/>
-
+            </button>
         </div>
     )
 }
 
-export default Home;
+export default Home
+
