@@ -310,6 +310,10 @@ h3{
   font-size: 16px;
 }
 
+.btnInfo:hover{
+  box-shadow: 5px 5px 5px var(--brown);
+}
+
 .btnSelect{
   padding: 10px;
   border-radius: 10px;

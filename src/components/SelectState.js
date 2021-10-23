@@ -11,7 +11,7 @@ const SelectState = () =>{
     
     const [parkSelect, setParkSelect] = useState(null);
 
-    const customStyles = {
+    const customStyles = { //Settings for the modal
       content: {
         top: '50%',
         left: '50%',
@@ -33,7 +33,7 @@ const SelectState = () =>{
       setIsOpen(false);
     }
 
-    const findState = (event)=>{
+    const findState = (event)=>{ // get data from API
       let selection = event.target.value;
       fetch ("https://developer.nps.gov/api/v1/parks?api_key=HsUV7WE7sPBToPWUjgP0dAnZbTGepLcxiX9NtHFt&stateCode="+selection)
         .then((resp)=>resp.json())
@@ -48,24 +48,20 @@ const SelectState = () =>{
       <option value="AK">Alaska</option>
       <option value="AZ">Arizona</option>
       <option value="AR">Arkansas</option>
-      <option value="CA">Californie</option>
-      <option value="NC">Caroline du Nord</option>
-      <option value="SC">Caroline du Sud</option>
+      <option value="CA">California</option>
       <option value="CO">Colorado</option>
       <option value="CT">Connecticut</option>
-      <option value="ND">Dakota du Nord</option>
-      <option value="SD">Dakota du Sud</option>
       <option value="DE">Delaware</option>
-      <option value="FL">Floride</option>
-      <option value="GA">Géorgie</option>
-      <option value="HI">Hawaï</option>
+      <option value="FL">Florida</option>
+      <option value="GA">Georgia</option>
+      <option value="HI">Hawaii</option>
       <option value="ID">Idaho</option>
       <option value="IL">Illinois</option>
       <option value="IN">Indiana</option>
       <option value="IA">Iowa</option>
       <option value="KS">Kansas</option>
       <option value="KY">Kentucky</option>
-      <option value="LA">Louisiane</option>
+      <option value="LA">Louisiana</option>
       <option value="ME">Maine</option>
       <option value="MD">Maryland</option>
       <option value="MA">Massachussets</option>
@@ -78,22 +74,27 @@ const SelectState = () =>{
       <option value="NV">Nevada</option>
       <option value="NH">New Hempshire</option>
       <option value="NJ">New Jersey</option>
-      <option value="NM">Nouveau-Mexique</option>
+      <option value="NM">New Mexico</option>
       <option value="NY">New York</option>
+      <option value="NC">North Carolina</option>
+      <option value="ND">North Dakota</option>
       <option value="OH">Ohio</option>
       <option value="OK">Oklahoma</option>
       <option value="OR">Oregon</option>
-      <option value="PA">Pennsylvanie</option>
+      <option value="PA">Pennsylvania</option>
       <option value="RI">Rhode Island</option>
+      <option value="SC">South Carolina</option>
+      <option value="SD">South Dakota</option>
       <option value="TN">Tennessee</option>
       <option value="TX">Texas</option>
       <option value="UT">Utah</option>
       <option value="VT">Vermont</option>
-      <option value="VA">Virginie</option>
-      <option value="WV">Virginie-Occidentale</option>
+      <option value="VA">Virginia</option>
       <option value="WA">Washington</option>
+      <option value="WV">West Virginia</option>
       <option value="WI">Wisconsin</option>
       <option value="WY">Wyoming</option>
+
     </select>
 
     {

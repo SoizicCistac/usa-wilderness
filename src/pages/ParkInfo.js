@@ -23,7 +23,7 @@ function ParkInfo(props){
     const [parkInfo, setParkInfo] = useState(null);
     const [bandeau, setBandeau] = useState(null)
 
-    useEffect(()=>{
+    useEffect(()=>{ // get data from API
         fetch("https://developer.nps.gov/api/v1/parks?api_key=soK1ork1zAMFM5QamP9JJfeAK8mq85HPKTLMf57d&id="+props.id)
             .then((resp)=>resp.json())
             .then((data)=> {
@@ -39,7 +39,7 @@ function ParkInfo(props){
             .then((data)=>setImageSlider(data.data[0].images));      
     }, []);
 
-      const settings = {
+      const settings = { //settings for slider
         dots: true,
         infinite: true,
         speed: 500,
