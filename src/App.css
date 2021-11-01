@@ -268,10 +268,6 @@ h3{
   width: 70%;
   margin-top:65px;
   font-family: var(--second-font);
-<<<<<<< HEAD
-  width:70%;
-=======
->>>>>>> 38194a9a4e91088d470f3f473e02dcd9daf44060
 }
 
 .bcategory{
@@ -301,6 +297,7 @@ h3{
   background:black;
   color:white;
   width:70px;
+  margin-bottom:40px;
 }
 
 .btnInfo{
