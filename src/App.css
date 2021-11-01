@@ -145,6 +145,7 @@ h3{
   flex-direction:row;
   height:72px;
   justify-content:space-around;
+  align-items: center;
   position: fixed;
   bottom: 0;
   left: 0;
@@ -155,45 +156,18 @@ h3{
 
 .textFooter{
   width:40%;
-  margin-top:15px;
   font-family:var(--second-font);
   font-size: 13px;
   font-weight: 500;
   color:white;
 }
 
-#imgFooter1{
-  height:98%;
-  margin-top:2px;
+#imgFooter1, #imgFooter6{
+  height: 100%;
 }
 
-#imgFooter2{
-  width:auto;
-  height:60%;
-  margin-top:20px;
-  margin-left:-7%;
-}
-
-#imgFooter3{
-  width:auto;
-  height:70%;
-  margin-top:15px;
-  margin-left:-7%;
-}
-
-#imgFooter4{
-  width:auto;
-  height:60%;
-  margin-top:15px;
-  margin-right:-7%;
-}
-
-#imgFooter5{
-  width:auto;
-  height:65%;
-  margin-top:15px;
-  margin-right:-7%;
-  background-color: var(--brown);
+#imgFooter2, #imgFooter3, #imgFooter4, #imgFooter5{
+  height: 60%;
 }
 
 .infoDiv{
@@ -336,22 +310,26 @@ h3{
     font-size: 34px;
   }
 
-  #imgFooter1{
-    margin-top:3px;
-    margin-left:1px!important;
+  #imgFooter1, #imgFooter6{
+    height: 100%;
   }
+
+  #imgFooter1{
+    padding-left: 10px;
+  }
+
+  #imgFooter6{
+    padding-right: 10px;
+  }
+
   .footer{
     width:100%;
     max-width:425px;
-    margin-top:2px;
   }
+
   .textFooter{
-    margin-top:1px!important;
     width:60%!important;
     font-size: 12px;
-  }
-  .textFooter>p{
-    margin-top:8px!important;
   }
 
   .parkByState{
@@ -412,13 +390,20 @@ h3{
 
 @media screen and (max-width:768px) {
 
+  #imgFooter2, #imgFooter5{
+    height: 60%;
+  }
+
   #imgFooter3,#imgFooter4{
     display:none;
   }
+
   .footer{
     width:100%;
     max-width:768px;
   }
+
+  /*
   #imgFooter1{
     margin-left:-3%;
   }
@@ -427,14 +412,13 @@ h3{
     height: 60%;
     margin-top: 20px;
     margin-left: -7%;
-  }
+  }*/
 
   .infoDiv{
     width: 60%;
   }
 
   .textFooter{
-    margin-top:10px!important;
     width:45%;
   }
 
