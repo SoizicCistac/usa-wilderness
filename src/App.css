@@ -24,6 +24,53 @@ body{
   text-align: center;
 }
 
+.container-home{
+  text-align: center;
+}
+
+h1{
+  font-family: var(--first-font);
+  color: var(--brown);
+  text-align: center;
+  font-size: 60px;
+  padding-top: 120px;
+  margin-bottom: 60px;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+.btnEnter{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  width: 100px;
+  margin: 50px auto;
+  border-radius: 10px;
+  border-color: var(--light-green);
+  text-decoration: none !important;
+  color: #333;
+  font-size: 20px;
+}
+
+.btnEnter:hover{
+  background-color: var(--light-green);
+  box-shadow: 5px 5px 5px var(--green);
+}
+
+.enter:visited{
+  color: #333;
+}
+
+.enter:hover{
+  color:white !important;
+  font-weight: 500;
+}
+
 #imgPark{
   width:50%;
   height: 100%;
@@ -75,14 +122,7 @@ body{
   z-index:1;
 }
 
-h1{
-  font-family: var(--first-font);
-  color: var(--brown);
-  text-align: center;
-  font-size: 60px;
-  padding-top: 120px;
-  margin-bottom: 60px;
-}
+
 
 h2{
   text-align: center;
@@ -217,10 +257,7 @@ h3{
   height: 600px;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
+
 
 .imageSlider+p{
   text-align:center!important;
@@ -402,17 +439,6 @@ h3{
     max-width:768px;
   }
 
-  /*
-  #imgFooter1{
-    margin-left:-3%;
-  }
-  #imgFooter2{
-    width: auto;
-    height: 60%;
-    margin-top: 20px;
-    margin-left: -7%;
-  }*/
-
   .infoDiv{
     width: 60%;
   }
@@ -480,35 +506,3 @@ h3{
   }
 }
 
-.btnEnter{
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  padding: 10px;
-  width: 100px;
-  margin: 50px auto;
-  border-radius: 10px;
-  border-color: var(--light-green);
-  text-decoration: none !important;
-  color: #333;
-  font-size: 20px;
-}
-
-.btnEnter:hover{
-  background-color: var(--light-green);
-  box-shadow: 5px 5px 5px var(--green);
-}
-
-.container-home{
-  text-align: center;
-}
-
-.enter:visited{
-  color: #333;
-}
-
-.enter:hover{
-  color:white !important;
-  font-weight: 500;
-}

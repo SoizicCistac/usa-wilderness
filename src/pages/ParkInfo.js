@@ -24,17 +24,17 @@ function ParkInfo(props){
     const [bandeau, setBandeau] = useState(null)
 
     useEffect(()=>{ // get data from API
-        fetch("https://developer.nps.gov/api/v1/parks?api_key=soK1ork1zAMFM5QamP9JJfeAK8mq85HPKTLMf57d&id="+props.id)
+        fetch("https://developer.nps.gov/api/v1/parks?api_key=mgazmTPYfc2H3jYIm93kpI42xgIdeqxgpW4nNPQc&id="+props.id)
             .then((resp)=>resp.json())
             .then((data)=> {
                 setParkInfo(data);
                 let parkCode=data.data[0].parkCode;
                 console.log(parkCode);
-                fetch('https://developer.nps.gov/api/v1/alerts?api_key=DD3tw4VvxXDLncBIh6tC6h995e70p9ZewKZs5EWc&limit=2&parkCode='+parkCode)
+                fetch('https://developer.nps.gov/api/v1/alerts?api_key=mgazmTPYfc2H3jYIm93kpI42xgIdeqxgpW4nNPQc&limit=2&parkCode='+parkCode)
                     .then((resp)=>resp.json())
                     .then((data)=>setBandeau(data));
             });
-        fetch('https://developer.nps.gov/api/v1/parks?api_key=kObkkskUHJM28c14EE9aAORY823ENgoCnvj1KsIj&id='+props.id)
+        fetch('https://developer.nps.gov/api/v1/parks?api_key=mgazmTPYfc2H3jYIm93kpI42xgIdeqxgpW4nNPQc&id='+props.id)
             .then((resp)=>resp.json())
             .then((data)=>setImageSlider(data.data[0].images));      
     }, []);
