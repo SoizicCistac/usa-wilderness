@@ -58,7 +58,7 @@ function ParkInfo(props){
     
     let now= new Date();
     let currentFullYear=now.getFullYear();
-    let currentMonth=now.getMonth();
+
 
     return(
         <div>
@@ -101,27 +101,22 @@ function ParkInfo(props){
                                 </div>
                                 {   
                                     (bandeau !=null && bandeau.data.length>0) &&
-                                        bandeau.data.filter((p)=>
-                                        convertDate(p.lastIndexedDate.slice(0,4))==currentFullYear
-                                        )
-                                        .map((filteredAlert)=>{                                        
-                                            console.log(convertDate(filteredAlert.lastIndexedDate.slice(0,4)))
+                                        bandeau.data.filter((p)=>{
+                                        return  p.lastIndexedDate.slice(0,4)==currentFullYear
                                         })
-                                }
-                                {
-                                    (bandeau !=null && bandeau.data.length>0) &&
-                                        bandeau.data.map((p)=>{
-                                        return <div className="bandeau" key={p.category}>
-                                        <div className="bcategory"><p>{p.category}</p></div>
-                                        <br></br>
-                                        <div className="btitle"><p>{p.title}</p></div>
-                                        <br></br>
-                                        <div className="bdescription"><p>{p.description}</p></div>
-                                        <div className="blaid"><p>{convertDate(p.lastIndexedDate)}</p></div>
-                                        <hr></hr>
-                                        </div>
+                                        .map((filteredAlert)=>{
+                                            return <div className="bandeau"> 
+                                            <p className="alert">Alert</p> 
+                                            <div className="bcategory"><p>{filteredAlert.category}</p></div>
+                                            <br></br>
+                                            <div className="btitle"><p>{filteredAlert.title}</p></div>
+                                            <br></br>
+                                            <div className="bdescription"><p>{filteredAlert.description}</p></div>
+                                            <div className="blaid"><p>{convertDate(filteredAlert.lastIndexedDate)}</p></div>
+                                            <hr></hr>
+                                            </div>
                                     })
-                                }  
+                                }                                  
                             </div>                        
                         );
                     })
