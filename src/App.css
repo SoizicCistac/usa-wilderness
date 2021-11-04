@@ -386,6 +386,15 @@ h3{
   .btnInfo{
     width: 75%;
   }
+
+  .blaid>p{
+    margin-left:150px!important;
+    margin-top:-27px;
+  }
+  
+  #modalBtnClose{
+    margin-top:20px;
+  }
 }
 
 @media screen and (max-width:768px) {
@@ -441,6 +450,9 @@ h3{
   }
   .imageSlider+p{
     text-align:center!important;
+  }
+  .blaid>p{
+    margin-left:330px;
   }
 }
 

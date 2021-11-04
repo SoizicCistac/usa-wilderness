@@ -28,7 +28,7 @@ const SelectActivity = () =>{
 
     const findActivity = (event)=>{ //get data from API
       let selection = event.target.value;
-      fetch ("https://developer.nps.gov/api/v1/parks?api_key=HtGeKfGroTqfT3YbR94d31DmbprYmSpMqBmo6jer&q="+selection)
+      fetch ("https://developer.nps.gov/api/v1/parks?api_key=mgazmTPYfc2H3jYIm93kpI42xgIdeqxgpW4nNPQc&q="+selection)
         .then((resp)=>resp.json())
         .then((data)=>setUsPark(data));
     };
