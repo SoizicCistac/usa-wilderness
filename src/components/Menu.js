@@ -8,7 +8,7 @@ const Menu = () => {
     return(
     <nav className="navBar">
         <img id="logo" src={logo} alt="logo"/>
-        <Link id="linkHome" to='/'>Home</Link>
+        <Link id="linkHome" to='/select'>Home</Link>
     </nav>
     )
 }
