@@ -24,13 +24,13 @@ function ParkInfo(props){
     const [bandeau, setBandeau] = useState(null)
 
     useEffect(()=>{ // get data from API
-        fetch("https://developer.nps.gov/api/v1/parks?api_key=rZhcCrv2n16zgelgmIc2adI61HkaEArFIMeHhH6E&id="+props.id)
+        fetch("https://developer.nps.gov/api/v1/parks?api_key=HsUV7WE7sPBToPWUjgP0dAnZbTGepLcxiX9NtHFt&id="+props.id)
             .then((resp)=>resp.json())
             .then((data)=> {
                 setParkInfo(data);
                 let parkCode=data.data[0].parkCode;
                 console.log(parkCode);
-                fetch('https://developer.nps.gov/api/v1/alerts?api_key=rZhcCrv2n16zgelgmIc2adI61HkaEArFIMeHhH6E&limit=2&parkCode='+parkCode)
+                fetch('https://developer.nps.gov/api/v1/alerts?api_key=HsUV7WE7sPBToPWUjgP0dAnZbTGepLcxiX9NtHFt&limit=2&parkCode='+parkCode)
                     .then((resp)=>resp.json())
                     .then((data)=>setBandeau(data));
             });    

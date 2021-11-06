@@ -289,6 +289,10 @@ h2{
   width: 70%;
 }
 
+.textDirection p{
+  margin-top: 20px;
+}
+
 .bandeau{
   width: 70%;
   margin-top:65px;
@@ -506,9 +510,6 @@ h2{
     margin-left:330px;
   }
 }
-
-
-
 
 
 
