@@ -1,0 +1,32 @@
+{
+  "files": {
+    "main.css": "/usa-wilderness/static/css/main.b48ed685.chunk.css",
+    "main.js": "/usa-wilderness/static/js/main.85c568a1.chunk.js",
+    "main.js.map": "/usa-wilderness/static/js/main.85c568a1.chunk.js.map",
+    "runtime-main.js": "/usa-wilderness/static/js/runtime-main.463da1a3.js",
+    "runtime-main.js.map": "/usa-wilderness/static/js/runtime-main.463da1a3.js.map",
+    "static/css/2.3e735094.chunk.css": "/usa-wilderness/static/css/2.3e735094.chunk.css",
+    "static/js/2.9ad0ddb9.chunk.js": "/usa-wilderness/static/js/2.9ad0ddb9.chunk.js",
+    "static/js/2.9ad0ddb9.chunk.js.map": "/usa-wilderness/static/js/2.9ad0ddb9.chunk.js.map",
+    "static/js/3.40de7fe8.chunk.js": "/usa-wilderness/static/js/3.40de7fe8.chunk.js",
+    "static/js/3.40de7fe8.chunk.js.map": "/usa-wilderness/static/js/3.40de7fe8.chunk.js.map",
+    "index.html": "/usa-wilderness/index.html",
+    "static/css/2.3e735094.chunk.css.map": "/usa-wilderness/static/css/2.3e735094.chunk.css.map",
+    "static/css/main.b48ed685.chunk.css.map": "/usa-wilderness/static/css/main.b48ed685.chunk.css.map",
+    "static/js/2.9ad0ddb9.chunk.js.LICENSE.txt": "/usa-wilderness/static/js/2.9ad0ddb9.chunk.js.LICENSE.txt",
+    "static/media/camping.4d431f24.png": "/usa-wilderness/static/media/camping.4d431f24.png",
+    "static/media/horseRiding.a27494a7.png": "/usa-wilderness/static/media/horseRiding.a27494a7.png",
+    "static/media/lac.f72fcaa5.png": "/usa-wilderness/static/media/lac.f72fcaa5.png",
+    "static/media/logo.2b132b95.png": "/usa-wilderness/static/media/logo.2b132b95.png",
+    "static/media/montagne.c644731d.png": "/usa-wilderness/static/media/montagne.c644731d.png",
+    "static/media/randonnee.e26f3f96.png": "/usa-wilderness/static/media/randonnee.e26f3f96.png",
+    "static/media/slick-theme.css": "/usa-wilderness/static/media/slick.c94f7671.ttf"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.463da1a3.js",
+    "static/css/2.3e735094.chunk.css",
+    "static/js/2.9ad0ddb9.chunk.js",
+    "static/css/main.b48ed685.chunk.css",
+    "static/js/main.85c568a1.chunk.js"
+  ]
+}
