@@ -1,6 +1,7 @@
 {
   "name": "rando",
   "version": "0.1.0",
+  "homepage": "https://soiziccistac.github.io/usa-wilderness",
   "private": true,
   "engines": {
     "node": "16.x",
@@ -22,6 +23,8 @@
     "web-vitals": "^1.1.2"
   },
   "scripts": {
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
@@ -39,6 +42,7 @@
     "not op_mini all"
   ],
   "devDependencies": {
-    "@types/leaflet": "^1.7.5"
+    "@types/leaflet": "^1.7.5",
+    "gh-pages": "^5.0.0"
   }
 }

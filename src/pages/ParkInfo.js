@@ -24,13 +24,13 @@ function ParkInfo(props){
     const [bandeau, setBandeau] = useState(null)
 
     useEffect(()=>{ // get data from API
-        fetch("https://developer.nps.gov/api/v1/parks?api_key=HsUV7WE7sPBToPWUjgP0dAnZbTGepLcxiX9NtHFt&id="+props.id)
+        fetch(`https://developer.nps.gov/api/v1/parks?api_key=HsUV7WE7sPBToPWUjgP0dAnZbTGepLcxiX9NtHFt&id=${props.id}`)
             .then((resp)=>resp.json())
             .then((data)=> {
                 setParkInfo(data);
                 let parkCode=data.data[0].parkCode;
                 console.log(parkCode);
-                fetch('https://developer.nps.gov/api/v1/alerts?api_key=HsUV7WE7sPBToPWUjgP0dAnZbTGepLcxiX9NtHFt&limit=2&parkCode='+parkCode)
+                fetch(`https://developer.nps.gov/api/v1/alerts?api_key=HsUV7WE7sPBToPWUjgP0dAnZbTGepLcxiX9NtHFt&limit=2&parkCode=${parkCode}`)
                     .then((resp)=>resp.json())
                     .then((data)=>setBandeau(data));
             });    
@@ -99,7 +99,7 @@ function ParkInfo(props){
                                 {   
                                     (bandeau !=null && bandeau.data.length>0) &&
                                         bandeau.data.filter((p)=>{
-                                        return  p.lastIndexedDate.slice(0,4)==currentFullYear
+                                        return  p.lastIndexedDate.slice(0,4)===currentFullYear
                                         })
                                         .map((filteredAlert)=>{
                                             return <div className="bandeau"> 
